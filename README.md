@@ -4,7 +4,8 @@ Erste Notiz über die Funktionsweise der DBIx::Class-Module (ORM) unter Debian B
 Natürlich findet man mit Hilfe von perldoc DBIx::Class eine Menge hilfreicher Informationen.
 Und natürlich weiß man danach immer alles besser...
 Aber ein paar einfachere Beispiele -- unter Einsatz von dbicdump wären für den Anfang nützlicher,
-um die Funktionsweise zu verdeutlichen.
+um die Funktionsweise und den unglaublichen Komfort des objektrelationalen Mappints unter Perls
+DBIx zu verdeutlichen.
 
 Daher dieses Beispiel:
 
