@@ -22,4 +22,3 @@ foreach my $messung ( @all_messungen ){
     printf "\t%.3f\n", $messung->kaltwasser;
     printf "\t%.3f\n", $messung->heizung;    
 }
-
