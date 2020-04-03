@@ -1,11 +1,13 @@
 # Haushalt
-Erste Notiz über die Funktionsweise der DBIx::Class-Module (ORM)
+Erste Notiz über die Funktionsweise der DBIx::Class-Module (ORM) unter Debian Buster
 
 Dieses Beispiel:
 
-1.      dbicdump -o dump_directory=./lib -o components='["InflateColumn::DateTime"]' Haushalt::Schema dbi:SQLite./haushalt.db
+1.      cd /home/$USER/Haushalt
 
-2.      Hauptprogramm erstellen:
+2.      dbicdump -o dump_directory=./lib -o components='["InflateColumn::DateTime"]' Haushalt::Schema dbi:SQLite./haushalt.db
+
+3.      Hauptprogramm erstellen:
 
         #!/usr/bin/perl
         use strict;
