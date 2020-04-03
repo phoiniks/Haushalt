@@ -11,6 +11,21 @@ Daher dieses Beispiel:
 1.      cd /home/$USER/Haushalt
 
 2.      dbicdump -o dump_directory=./lib -o components='["InflateColumn::DateTime"]' Haushalt::Schema dbi:SQLite./haushalt.db
+        Dieser Befehl erstellt im Verzeichnis Haushalt -- in dem natürlich die SQLite3-Datenbank haushalt.db liegen muss --
+        eine Verzeichnishierarchie:
+
+        lib--|
+             Haushalt--|
+                       Schema--|
+                               Result
+
+        Im Verzeichnis Schema befindet sich darüber hinaus das automatisch (durch dbicdump) generierte Modul Schema.pm
+        und im Verzeichnis Result WasserUndHeizung.pm (dass dbicdump aus einer Tabelle namens wasser_und_heizung generiert hat.
+        Dieses Modul enthält die Klasse 'WasserUndHeizung', die ihrerseits die Felder der Tabelle abbildet.
+        Die Datenbank lege ich der Einfachheit halber bei. Um sich die Funktionsweise zu verdeutlichen, sollte man die
+        Prozedur vielleicht kurz durchspielen: Per git clone https://github.com/phoiniks/Haushalt das Verzeichnis auf die
+        eigene Platte befördern. Dann lib rekursiv löschen (rm -rf lib) und den unter 1. angegebenen Befehl eintippen sowie
+        per Return alles Weitere veranlassen...
 
 3.      Hauptprogramm erstellen:
 
@@ -38,4 +53,3 @@ Daher dieses Beispiel:
             printf "%f\n", $messung->kaltwasser;
             printf "%f\n", $messung->heizung;
         }
-
