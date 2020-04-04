@@ -59,7 +59,7 @@ Daher dieses Beispiel:
 
 Weiteres Beispiel, diesmal für eine auf localhost (127.0.0.1) installierte MariaDB:
 
-dbicdump -o dump_directory=./ -o components='["InflateColumn"]' \
+dbicdump -o dump_directory=./ -o components='["InflateColumn"]' \\
 Bewerbungen::Schema 'dbi:MariaDB:database=datenbank;host=127.0.0.1;port=3306' benutzer passwort
 
 (Backslash zur Verhinderung des Zeilenumbruchs im Befehl)
