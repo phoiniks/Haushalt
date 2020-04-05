@@ -1,9 +1,6 @@
 #!/usr/bin/perl
-use strict;
-use warnings;
+use Modern::Perl;
 use diagnostics;
-
-use utf8;
 
 use FindBin;
 
@@ -11,9 +8,10 @@ BEGIN {
     use lib "$FindBin::Bin/lib";
 }
 
+use File::Copy;
+use File::HomeDir qw( home );
 use Haushalt::Schema;
 
-use Modern::Perl;
 
 print "Kaltwasserzähler: ";
 chomp (my $kaltwasser = <STDIN>);
@@ -29,3 +27,5 @@ my $schema = Haushalt::Schema->connect("dbi:SQLite:dbname=haushalt.db", "", "", 
 my $messung = $schema->resultset( 'WasserUndHeizung' )->new( { warmwasser => $warmwasser, kaltwasser => $kaltwasser, heizung => $heizung } );
 
 $messung->insert;
+
+copy("haushalt.db", home());
