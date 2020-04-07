@@ -34,7 +34,7 @@ my $messung1 = $schema->resultset( 'WasserUndHeizung' )->new( { warmwasser => $w
 
 $messung1->insert;
 
-my $messung2 = $schema->resultset( 'Temperatur' )->new( { drinnen => $drinnen, draußen => $draussen } );
+my $messung2 = $schema->resultset( 'Temperatur' )->new( { drinnen => $drinnen, draussen => $draussen } );
 
 $messung2->insert;
 
