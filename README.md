@@ -11,7 +11,7 @@ Daher dieses Beispiel:
 
 1.      cd /home/$USER/Haushalt
 
-2.      dbicdump -o dump_directory=./lib -o components='["InflateColumn::DateTime"]' Haushalt::Schema dbi:SQLite./haushalt.db
+2.      dbicdump -o dump_directory=./lib -o components='["InflateColumn::DateTime"]' Haushalt::Schema dbi:SQLite:./haushalt.db
         Dieser Befehl erstellt im Verzeichnis Haushalt -- in dem natürlich die SQLite3-Datenbank haushalt.db liegen muss --
         eine Verzeichnishierarchie:
 
