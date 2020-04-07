@@ -22,10 +22,20 @@ chomp (my $warmwasser = <STDIN>);
 print "Heizung: ";
 chomp (my $heizung    = <STDIN>);
 
+print "Innentemperatur: ";
+chomp (my $drinnen = <STDIN>);
+
+print "Außentemperatur: ";
+chomp (my $draussen = <STDIN>);
+
 my $schema = Haushalt::Schema->connect("dbi:SQLite:dbname=haushalt.db", "", "", { PrintError => 1, RaiseError => 1 });
 
-my $messung = $schema->resultset( 'WasserUndHeizung' )->new( { warmwasser => $warmwasser, kaltwasser => $kaltwasser, heizung => $heizung } );
+my $messung1 = $schema->resultset( 'WasserUndHeizung' )->new( { warmwasser => $warmwasser, kaltwasser => $kaltwasser, heizung => $heizung } );
 
-$messung->insert;
+$messung1->insert;
+
+my $messung2 = $schema->resultset( 'Temperatur' )->new( { drinnen => $drinnen, draußen => $draussen } );
+
+$messung2->insert;
 
 copy("haushalt.db", home());
