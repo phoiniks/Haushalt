@@ -55,6 +55,8 @@ Daher dieses Beispiel:
             printf "%f\n", $messung->heizung;
         }
 
+4.      Mittels ./wasser_und_heizung.r PDF mit drei Diagrammen über Wasser- bzw. Energieverbrauch erstellen
+
 =============================================================================================================================================================
 
 Weiteres Beispiel, diesmal für eine auf localhost (127.0.0.1) installierte MariaDB:
