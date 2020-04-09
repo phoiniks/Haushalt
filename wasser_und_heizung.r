@@ -24,4 +24,13 @@ axis(1, at=seq(kaltwasser), labels=datum, las=2, mgp=c(5, .7, 0), cex.axis=0.4)
 plot(x=heizung, type="l", xlab="Heizung", srt=60, xaxt="n", las=2, panel.first=grid(), col=c("green"))
 axis(1, at=seq(heizung), labels=datum, las=2, mgp=c(5, .7, 0), cex.axis=0.4)
 
+mean(warmwasser)
+median(warmwasser)
+
+mean(kaltwasser)
+median(kaltwasser)
+
+mean(heizung)
+median(heizung)
+
 grid()
